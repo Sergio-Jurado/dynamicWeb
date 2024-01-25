@@ -33,6 +33,9 @@ class Menu
     #[ORM\OneToOne(mappedBy: 'menu', cascade: ['persist', 'remove'])]
     private ?Pagina $pagina = null;
 
+    #[ORM\Column]
+    private ?int $menuOrder = null;
+
     public function __construct()
     {
         $this->menus = new ArrayCollection();
@@ -122,6 +125,18 @@ class Menu
         }
 
         $this->pagina = $pagina;
+
+        return $this;
+    }
+
+    public function getMenuOrder(): ?int
+    {
+        return $this->menuOrder;
+    }
+
+    public function setMenuOrder(int $menuOrder): static
+    {
+        $this->menuOrder = $menuOrder;
 
         return $this;
     }
