@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Pagina{% endblock %}
+
+{% block body %}
+    <h1>Create new Pagina</h1>
+
+    {{ include('pagina/_form.html.twig') }}
+
+    <a href="{{ path('app_pagina_index') }}">back to list</a>
+{% endblock %}

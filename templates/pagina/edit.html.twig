@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Pagina{% endblock %}
+
+{% block body %}
+    <h1>Edit Pagina</h1>
+
+    {{ include('pagina/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_pagina_index') }}">back to list</a>
+
+    {{ include('pagina/_delete_form.html.twig') }}
+{% endblock %}
